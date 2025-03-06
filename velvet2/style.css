@@ -1,0 +1,357 @@
+@font-face {
+    font-family: 'Velvet';
+    src: url(billing-lottre-regular.otf) format('opentype');
+    font-weight: normal;
+}
+
+:root {
+    --fonte-velvet: 'Velvet', cursive;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+/* configuração da imagem */
+img {
+    vertical-align: middle;
+    max-width: 100%;
+    display: inline-block;
+}
+
+/* configuração do vídeo */
+video {
+    vertical-align: middle;
+    max-width: 100%;
+    margin-top: -25px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+h2 {
+    font-family: var(--fonte-velvet);
+    font-size: 57px;
+    background: #ff6a00;
+    background: -webkit-linear-gradient(
+        to right,
+        #ff6a00,
+        #ee0979
+    );
+    background: linear-gradient(
+        to right,
+        #ff6a00,
+        #ee0979
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h4 {
+    background: linear-gradient(to right, transparent, #ff6a00, #ee0979, transparent);
+    margin-top: -39px;
+    margin-bottom: 50px;
+}
+
+.inline-block {
+    max-width: 100%;
+    display: inline-block;
+}
+
+.page-wrapper {
+    z-index: 0;
+    position: relative;
+}
+
+.container {
+    width: 90vw;
+    max-width: 1360;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* configuração do espaçamento entro o primeiro texto e vídeo */
+.margin-bottom-xlarge {
+    margin-bottom: 56px;
+}
+
+/* configuração do espaçamento entro o segundo (e outros) texto e vídeo */
+.margin-bottom-medium {
+    margin-bottom: 56px;
+}
+
+.paragraph-large {
+    letter-spacing: -0.02em;
+    font-size: 20px;
+}
+
+/* cor da header */
+.section-timeline-heading {
+    background-color: #0a0a0a;
+}
+
+/* configuração da header */
+.padding-vertical-xlarge {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+/* configuração da header-texto */
+.timeline-main_heading-wrapper {
+    color: #fff;
+    text-align: center;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* configuração da linha do tempo - estrutura */
+.timeline_component {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    position: relative;
+}
+
+/* configuração da linha do tempo - estrutura dos textos */
+.timeline_item {
+    z-index: 2;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 180px 1fr;
+    grid-auto-columns: 1fr;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: grid;
+    position: relative;
+}
+
+/* configuração da linha do tempo -  parte esquerda (DATAS) */
+.timeline_left {
+    text-align: right;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+/* configuração da linha do tempo - parte do meio (BOLINHA) */
+.timeline_centre {
+    justify-content: center;
+    display: flex;
+}
+
+/* configuração das DATAS ARRUMAR TAMANHO FONT-SIZE */
+.timeline_date-text {
+    color: #fff;
+    letter-spacing: -0.03;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.2;
+    position: sticky; /* permite a data se mover */
+    top: 50vh; /* sincronização com a bolinha */
+}
+
+/* configuração dos textos do lado direito */
+.timeline_text {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: justify; /* tirar para ficar para esquerda ou 
+                         deixar justificado para centralizar */
+}
+
+.link_laranja {
+    font-size: 35px;
+    text-decoration: none;
+    color: #ff6a00;
+}
+
+.link_rosa {
+    font-size: 35px;
+    text-decoration: none;
+    color: #ee0979;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* configuração da BOLINHA da linha do tempo COLOCAR IMAGEM */
+.timeline_circle {
+    background-color: #fff;
+    border-radius: 100%;
+    width: 15px;
+    min-width: 15px;
+    max-width: 15px;
+    height: 15px;
+    min-height: 15px;
+    max-height: 15px;
+    position: sticky;
+    top: 50vh;
+    box-shadow: 0 0 0 8px #0a0a0a;
+}
+
+/* configuração linha cinza que percorrerá a colorida */
+.timeline_progress {
+    z-index: -2;
+    background-color: #414141;
+    width: 3px;
+    height: 100%;
+    position: absolute;
+}
+
+/* configuração da linha colorida que percorrerá por cima da cinza */
+.timeline_progress_bar {
+    z-index: -1; /* sobreposição dos elementos (linha colorida)*/
+    background: #ff6a00;
+    background: -webkit-linear-gradient(
+        to bottom,
+        #ff6a00,
+        #ee0979
+    );
+    background: linear-gradient(
+        to bottom,
+        #ff6a00,
+        #ee0979
+    );
+
+    width: 3px; /* largura da linha colorida */
+    height: 50vh; /* altura para acompanhar a bolinha */
+    position: fixed; /* acompanhar */
+    inset: 0 auto 50vh; 
+}
+
+/* configuração da  parte da linha do tempo (plano de fundo) */
+.section-timeline {
+    z-index: -3; /* configuração linha */
+    background-color: #0a0a0a;
+    position: relative;
+    zoom: 70%; /* diminui tamanho dos elementos, para não ficar grandes */
+}
+
+/* NÃO USADO */
+.timeline_link {
+    opacity: 0.6;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    display: flex;
+}
+
+/* NÃO USADO */
+.timeline.link:hover {
+    opacity: 1s;
+}
+
+/* NÃO USADO */
+.link-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+}
+
+/* NÃO USADO */
+.inline-block {
+    display: inline-block;
+}
+
+/* NÃO USADO */
+.text-colour-lightgrey {
+    color: #ffffffa6;
+}
+
+.overlay-fade-top {
+    background-image: linear-gradient(#0a0a0a, #0a0a0a00);
+    height: 88px;
+    position: absolute;
+    inset: 0% 0% auto;
+}
+
+.overlay-fade-bottom {
+    background-image: linear-gradient(#0a0a0a, #0a0a0a00);
+    width: 88%;
+    position: absolute;
+    inset: 0% 0% auto;
+}
+
+/* parte debaixo do site (sobra) */
+.fundo {
+    height: 70vh;
+    background-color: #0a0a0a;
+}
+
+/* DESCOBRIR */
+@media screen and (max-width: 767px) {
+    h2 {
+        font-size: 40px;
+    }
+
+    .paragraph-large {
+        font-size: 18px;
+    }
+
+    .padding-vertical-xlarge {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .timeline_item {
+        grid-template-columns: 64px 1fr;
+        width: 100%;
+    }
+
+    .timeline_left {
+        text-align: left;
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .timeline.centre {
+        justify-content: flex-start;
+        grid-area: 1 / 1 / 3 / 2;
+    }
+
+    .timeline_right {
+        grid-area: span 1 / span 1 / span 1 / span 1;
+    }
+
+    .timeline_date-text {
+        margin-bottom: 24px;
+        font-size: 36px;
+    }
+
+    .timeline_text {
+        font-size: 20px;
+    }
+
+    .timeline_progress {
+        left: 6px;
+    }
+
+    .margin-bottom-xlarge {
+        margin-bottom: 48px;
+    }
+}
